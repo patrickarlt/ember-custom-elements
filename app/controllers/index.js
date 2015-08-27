@@ -5,7 +5,9 @@ var MyCustomElement = Object.create(HTMLElement.prototype);
 MyCustomElement.attachedCallback = function () {
   var self = this;
   this.addEventListener('click', function () {
-    self.dispatchEvent(new CustomEvent('customevent'));
+    self.dispatchEvent(new CustomEvent('customevent', {
+      bubbles: true
+    }));
   });
 };
 
